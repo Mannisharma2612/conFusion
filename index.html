@@ -35,7 +35,7 @@
                     <li class="nav-item"><a class="nav-link" href="./contactus.html"><span class="fa fa-address-card fa-lg"></span> Contact</a></li>
                 </ul>
                 <span class="navbar-text">
-                    <a data-toggle="modal" data-target="#loginmodal">
+                    <a id="buttonLogin" type="button" role="button">
                         <span class="fa fa-sign-in"></span> Login
                     </a>
                 </span>
@@ -43,7 +43,7 @@
         </div>
     </nav> 
     <!-- logIn Modal-->
-    <div id="loginmodal" class="modal fade" role="dialog">
+    <div id="loginModal" class="modal fade" role="dialog">
         <div class="modal-dialog modal-lg" role="content">
 
             <!--Modal Content-->
@@ -168,8 +168,7 @@
                     <img alt="logo" src="img/logo.png" class="img-fluid">
                 </div>
                 <div class="col-12 col-sm align-self-center">
-                    <a type="button" class="btn btn-warning btn-md btn-block" role="button"
-						data-toggle="modal" data-target="#reserveModal" title="Or Call us at +852 12345678">Reserve a Table</a>
+                    <a id="buttonReservation" type="button" class="btn btn-warning btn-sm btn-block" role="button">Reserve Table</a>
                 </div>
             </div>
         </div>
@@ -390,6 +389,16 @@
                     $("#carouselButton").children("span").removeClass('fa-play');
                     $("#carouselButton").children("span").addClass('fa-pause');                    
                 }
+            });
+
+            //login Modal
+            $("#buttonLogin").click(function(){
+                $('#loginModal').modal('show');
+            });
+
+            //reservation modal
+            $("#buttonReservation").click(function(){
+                $('#reserveModal').modal('show');
             });
         });
     </script>
